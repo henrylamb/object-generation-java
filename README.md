@@ -15,6 +15,26 @@ To find more in-depth documentation please visit: [Multiple - Generation on Rail
 - **Jackson library** for JSON serialization/deserialization
 - **Dotenv library** for environment variable management (optional)
 
+## Example Setup within Gradle
+
+For the below setup, a grade.properties file with the `gpr.user` and `gpr.token` values will be your GitHub username along with a classic GitHub token with read permissions. This will allow you to pull the package to your project.
+
+```groovy
+repositories {
+    mavenCentral()
+     maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/henrylamb/object-generation-java")
+       credentials {
+            username = project.findProperty("gpr.user") as String ?: System.getenv("GITHUB_ACTOR")
+             password = project.findProperty("gpr.token") as String ?: System.getenv("GITHUB_TOKEN")
+         }
+     }
+}
+```
+
+
+
 ## Example Usage
 
 Here's how you can use the `Client` to send a JSON definition.
