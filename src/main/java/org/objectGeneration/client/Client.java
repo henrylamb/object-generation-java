@@ -1,6 +1,5 @@
 package org.objectGeneration.client;
 
-
 import org.objectGeneration.jsonSchema.Definition;
 
 import java.io.IOException;
