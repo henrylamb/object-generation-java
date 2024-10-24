@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "org.objectGeneration"
-version = "1.2.5"
+version = "1.2.6"
 
 repositories {
     mavenCentral()
@@ -19,7 +19,7 @@ repositories {
         }
     }
 }
-
+//change
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
